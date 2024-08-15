@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card">
+    <%= image_tag(@flat.picture_url, class: "card-img-top") if @flat.picture_url.present? %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @flat.name %></h5>
+      <p class="card-text"><%= @flat.description %></p>
+      <p class="card-text"><small class="text-muted">Located at: <%= @flat.address %></small></p>
+      <p class="card-text"><small class="text-muted">Price: $<%= @flat.price_per_night %> per night</small></p>
+      <p class="card-text"><small class="text-muted">Guests: <%= @flat.number_of_guests %></small></p>
+      <a href="<%= edit_flat_path(@flat) %>" class="btn btn-secondary">Edit</a>
+      <%= link_to 'Delete', @flat, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
